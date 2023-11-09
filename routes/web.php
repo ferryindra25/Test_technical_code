@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AppController;
+use App\Http\Controllers\FerryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::get("/", function () {
+    return view("test");
 });
 
-Route::get('/view', [AppController::class, 'index']);
+Route::post("/generateSegitiga", [FerryController::class, 'generateSegitiga']);
+Route::post("/generateGanjil", [FerryController::class, 'generateGanjil']);
+Route::post("/generatePrima", [FerryController::class, 'generatePrima']);
+
